@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import { DropResult } from "react-beautiful-dnd";
 
 interface CityContextProviderProps {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ export const CityContext = createContext<CityContextType | undefined>(
 );
 export const CityContextProvider = ({ children }: CityContextProviderProps) => {
   const [cities, setCities] = useState<string[]>([]);
+
   return (
     <CityContext.Provider value={{ cities, setCities }}>
       {children}
