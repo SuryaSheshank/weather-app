@@ -22,7 +22,7 @@ function App() {
         <CityContextProvider>
           <Header />
           <DragDropContext onDragEnd={handleDragEnd}>
-            <WeatherCardDashboard dragIdx={dragIdx} />
+            <WeatherCardDashboard dragIdx={dragIdx} setDragIdx={setDragIdx}/>
           </DragDropContext>
         </CityContextProvider>
       </UnitsContextProvider>

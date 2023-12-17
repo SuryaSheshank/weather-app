@@ -6,7 +6,6 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { CurrentWeatherCard } from "../../components/current-weather-card/CurrentWeatherCard";
 import { ForecastGrid } from "../../components/forecast-grid/ForecastGrid";
 import { useCityContext } from "../../contexts/CityContext";
-import { Map } from "../../components/map/Map";
 
 interface WeatherCardProps {
   cityName: string;

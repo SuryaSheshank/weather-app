@@ -13,10 +13,12 @@ import "./weather-card-dashboard.css";
 
 interface WeatherCardDashboardProps {
   dragIdx: number[];
+  setDragIdx:(dragIdx:number[])=>void
 }
 
 export const WeatherCardDashboard = ({
   dragIdx,
+  setDragIdx
 }: WeatherCardDashboardProps) => {
   const { cities, setCities } = useCityContext();
   const { units } = useUnitsContext();
@@ -29,7 +31,8 @@ export const WeatherCardDashboard = ({
     newCities[dragIdx[1]] = cities[dragIdx[0]];
     setCities(newCities);
     localStorage.setItem('cities',JSON.stringify(newCities));
-  },[dragIdx]);
+    setDragIdx([]);
+  });
 
   const renderDashboardView = () => {
     if (!cities || cities.length === 0) {
