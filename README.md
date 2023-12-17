@@ -4,7 +4,8 @@ To run locally
 **npm install**
 **npm start**
 
-Key Features:
+**Key Features** :
+
 -- Fetch Current Weather and 5-Day-Forecast for selected city
 
 -- Add and delete cities
