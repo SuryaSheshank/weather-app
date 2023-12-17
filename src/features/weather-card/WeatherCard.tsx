@@ -14,7 +14,7 @@ interface WeatherCardProps {
 }
 
 export const WeatherCard = ({ cityName, units }: WeatherCardProps) => {
-  const { setCities,response } = useCityContext();
+  const { setCities } = useCityContext();
   const deleteCities = () => {
     setCities((prevState) => {
         const newCities=prevState.filter((item) => cityName !== item)
@@ -33,7 +33,6 @@ export const WeatherCard = ({ cityName, units }: WeatherCardProps) => {
             </Box>
             <CurrentWeatherCard cityName={cityName} units={units} />
             <ForecastGrid cityName={cityName} units={units} />
-            <Map lon={response?.coord?.lon} lat={response?.coord?.lat}/>
           </Card>
       
   );

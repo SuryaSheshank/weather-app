@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import {
-  DragDropContext,
   Droppable,
   Draggable,
-  DropResult,
 } from "react-beautiful-dnd";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
 import Box from "@mui/material/Box";
@@ -31,7 +29,7 @@ export const WeatherCardDashboard = ({
     newCities[dragIdx[1]] = cities[dragIdx[0]];
     setCities(newCities);
     localStorage.setItem('cities',JSON.stringify(newCities));
-  }, [dragIdx]);
+  },[dragIdx]);
 
   const renderDashboardView = () => {
     if (!cities || cities.length === 0) {
@@ -55,6 +53,7 @@ export const WeatherCardDashboard = ({
     return (
       <Droppable droppableId="weather-cards">
         {(provided) => (
+          <>
           <Box
             sx={{
               display: "grid",
@@ -83,8 +82,12 @@ export const WeatherCardDashboard = ({
                 )}
               </Draggable>
             ))}
-            {provided.placeholder}
+          {provided.placeholder}
           </Box>
+
+          </>
+
+
         )}
       </Droppable>
     );

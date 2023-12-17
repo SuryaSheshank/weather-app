@@ -10,13 +10,10 @@ import { useCityContext } from '../../contexts/CityContext';
 
 const CitySearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const {cities,setCities,setResponse}=useCityContext();
+  const {cities,setCities}=useCityContext();
   const updateCities=(city:string)=>{
     setCities([...cities,city]);
     localStorage.setItem('cities',JSON.stringify([...cities,city]));
-  }
-  const updateResponse=(res:any)=>{
-    setResponse(res);
   }
 
   const handleSearchChange = (event:React.ChangeEvent<HTMLInputElement>) => {
@@ -43,7 +40,6 @@ const CitySearch = () => {
 
       }
       updateCities(city);
-      updateResponse(res);
       toast.success('Added city !')
     }else{
        toast.error(`Error : ${res?.message}`)

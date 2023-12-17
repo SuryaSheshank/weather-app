@@ -19,9 +19,6 @@ export const Map = ({lat,lon}:MapProps) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={[lat, lon]} icon={mapIcon}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
       </Marker>
     </MapContainer>:''}
     </>

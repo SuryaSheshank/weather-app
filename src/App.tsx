@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { CityContextProvider, useCityContext } from "./contexts/CityContext";
+import { CityContextProvider } from "./contexts/CityContext";
 import { WeatherCardDashboard } from "./features/weather-card-dashboard/WeatherCardDashboard";
 import { UnitsContextProvider } from "./contexts/UnitsContext";
 import { Header } from "./features/header/Header";

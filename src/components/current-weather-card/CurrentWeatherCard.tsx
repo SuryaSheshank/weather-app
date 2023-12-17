@@ -6,9 +6,11 @@ import { WeatherIcon } from "../weather-icon/WeatherIcon";
 import AirIcon from "@mui/icons-material/Air";
 import CompressIcon from "@mui/icons-material/Compress";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import "./current-weather-card.css";
-import { unitsDef } from "../../constants";
 import Box from "@mui/material/Box";
+import { Map } from "../map/Map";
+import { unitsDef } from "../../constants";
+import "./current-weather-card.css";
+
 
 interface CurrentWeatherCardProps {
   cityName: string;
@@ -29,7 +31,8 @@ export const CurrentWeatherCard = ({
   const [currWeather, setCurrWeather] = useState<any>();
   useEffect(() => {
     const fetchCurrWeather = async () => {
-      setCurrWeather(await fetchWeatherData(cityName, units));
+      const data=await fetchWeatherData(cityName, units)
+      setCurrWeather(data);
     };
 
     fetchCurrWeather();
@@ -81,6 +84,7 @@ export const CurrentWeatherCard = ({
             </div>
           </Box>
         </div>
+        <Map lon={currWeather?.coord?.lon} lat={currWeather?.coord?.lat}/>
       </div>
     </>
   );
