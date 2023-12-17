@@ -1,4 +1,6 @@
 body{
     background-color: #fbfbfd;
 }
-
+.leaflet-container{
+    height:25vh;
+}

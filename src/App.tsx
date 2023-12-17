@@ -4,9 +4,9 @@ import { CityContextProvider, useCityContext } from "./contexts/CityContext";
 import { WeatherCardDashboard } from "./features/weather-card-dashboard/WeatherCardDashboard";
 import { UnitsContextProvider } from "./contexts/UnitsContext";
 import { Header } from "./features/header/Header";
+import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
-import { DragDropContext, DropResult } from "react-beautiful-dnd";
 
 function App() {
   const [dragIdx, setDragIdx] = useState<number[]>([]);
@@ -27,6 +27,7 @@ function App() {
         </CityContextProvider>
       </UnitsContextProvider>
       <ToastContainer />
+    
     </>
   );
 }

@@ -10,9 +10,13 @@ import { useCityContext } from '../../contexts/CityContext';
 
 const CitySearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const {cities,setCities}=useCityContext();
+  const {cities,setCities,setResponse}=useCityContext();
   const updateCities=(city:string)=>{
     setCities([...cities,city]);
+    localStorage.setItem('cities',JSON.stringify([...cities,city]));
+  }
+  const updateResponse=(res:any)=>{
+    setResponse(res);
   }
 
   const handleSearchChange = (event:React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +25,7 @@ const CitySearch = () => {
   const validate=()=>{
     if(searchTerm==="")return false;
     if(cities.includes(searchTerm)){
-      toast.error('city alreeady exists');
+      toast.warn('city alreeady exists');
       return false;
     }
     
@@ -32,17 +36,17 @@ const CitySearch = () => {
     
     const res=await fetchWeatherData(searchTerm,'metric');
     if(res?.cod===200){
-      const city=`${res?.name}, ${res?.sys?.country}`
+      const city=`${res?.name},${res?.sys?.country}`
       if(cities.includes(city)){
-        toast.error('city already exists');
+        toast.warn('city already exists');
         return;
 
       }
       updateCities(city);
-      // console.log('success');
+      updateResponse(res);
+      toast.success('Added city !')
     }else{
        toast.error(`Error : ${res?.message}`)
-      // console.log('error')
     }
   }
 

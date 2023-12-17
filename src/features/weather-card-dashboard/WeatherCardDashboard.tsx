@@ -30,6 +30,7 @@ export const WeatherCardDashboard = ({
     newCities[dragIdx[0]] = cities[dragIdx[1]];
     newCities[dragIdx[1]] = cities[dragIdx[0]];
     setCities(newCities);
+    localStorage.setItem('cities',JSON.stringify(newCities));
   }, [dragIdx]);
 
   const renderDashboardView = () => {
