@@ -1,0 +1,17 @@
+.vertical-separator {
+    border-right: 1px solid grey; 
+    margin-right: 20px; 
+    margin-left:20px;
+  }
+
+  .current-weather-grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  }
+
+  .flex-container{
+    display:flex;
+  }
+  .flex-container-gap{
+    gap:16px
+  }

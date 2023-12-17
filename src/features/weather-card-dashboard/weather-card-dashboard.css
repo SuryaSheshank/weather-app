@@ -1,0 +1,8 @@
+.paper-grid-dark{
+    background-color:#424242 !important;
+    color: #ffffff !important;
+}
+.paper-grid-container{
+    display:grid;
+    grid-template-columns: repeat('auto-fit',minmax(200px,1fr));
+}
