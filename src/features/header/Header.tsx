@@ -5,7 +5,7 @@ import { UnitsToggle } from "../../components/units-toggle/UnitsToggle";
 
 export const Header = () => {
   return (
-    <Box display="flex" justifyContent="space-between" marginTop={4} p={2}>
+    <Box display="flex" justifyContent="space-between" marginBottom={1} p={2} sx={{backgroundColor:"#FAF6F0"}}>
       <CitySearch />
       <UnitsToggle />
     </Box>

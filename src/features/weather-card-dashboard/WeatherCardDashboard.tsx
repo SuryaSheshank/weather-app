@@ -43,11 +43,12 @@ export const WeatherCardDashboard = ({
           justifyContent="center"
           alignItems="center"
           flexDirection="column"
+          sx={{height:'79vh'}}
         >
-          <Typography variant="h6">Please search for a city.</Typography>
-          <Typography variant="h1">Weather App</Typography>
+          <Typography color="#141E46" variant="h6"> Please search for a city !</Typography>
+          <Typography color='#141E46' variant="h1">Weather App</Typography>
           <h1>
-            <NightsStayIcon color="primary" style={{ fontSize: "10rem" }} />
+            <NightsStayIcon style={{ fontSize: "10rem",color:"141E46" }} />
           </h1>
         </Box>
       );
