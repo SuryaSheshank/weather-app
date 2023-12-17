@@ -1,8 +1,8 @@
-An application that displays weather of desired citites
+**An application that displays weather of desired citites**
 
 To run locally 
-** npm install
-** npm start
+**npm install**
+**npm start**
 
 Key Features:
 -- Fetch Current Weather and 5-Day-Forecast for selected city
