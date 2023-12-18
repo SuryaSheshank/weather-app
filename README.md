@@ -1,7 +1,9 @@
 **An application that displays weather of desired citites**
 
 To run locally 
+
 **npm install**
+
 **npm start**
 
 **Key Features** :
